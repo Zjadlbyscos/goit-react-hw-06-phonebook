@@ -7,7 +7,6 @@ import Filter from './Filter/Filter';
 import style from './App.module.css';
 
 const App = () => {
-
   const filtered = useSelector(state => state.filter);
   const contacts = useSelector(state => state.contacts);
 

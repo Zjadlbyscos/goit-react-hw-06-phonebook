@@ -2,10 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { qwery } from 'redux/sliceFilter';
 
-
 import s from './Filter.module.css';
 
- const Filter = () => {
+const Filter = () => {
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
@@ -28,4 +27,4 @@ import s from './Filter.module.css';
   );
 };
 
-export default Filter
+export default Filter;
