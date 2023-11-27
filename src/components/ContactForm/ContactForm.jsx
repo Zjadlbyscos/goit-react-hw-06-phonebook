@@ -76,7 +76,7 @@ ContactForm.propTypes = {
 };
 ContactForm.propTypes = {
   contacts: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
