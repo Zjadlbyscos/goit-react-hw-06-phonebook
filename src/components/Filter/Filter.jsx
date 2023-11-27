@@ -1,13 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { qwery } from 'redux/sliceFilter';
-import PropTypes from 'prop-types';
+
 
 import s from './Filter.module.css';
 
  const Filter = () => {
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
+
+  const handleInputChange = evt => {
+    dispatch(qwery(evt.currentTarget.value));
+  };
 
   return (
     <div className={s.wrapper}>
@@ -17,15 +21,11 @@ import s from './Filter.module.css';
         type="text"
         name="filter"
         placeholder="Search"
-        onChange={evt => dispatch(qwery(evt.currentTarget.value))}
-             value={filter}
+        onChange={handleInputChange}
+        value={filter}
       />
     </div>
   );
-};
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
 };
 
 export default Filter
