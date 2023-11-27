@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
+import { sliceContact } from './sliceContact';
+import { sliceFilter } from './sliceFilter';
 
-import { sliceContact } from "./redux/sliceContact";
-import { sliceFilter } from "./redux/sliceFilter";
-
-const store = configureStore({
-  reducer: sliceContact.reducer
+export const store = configureStore({
+  reducer: {
+    contacts: sliceContact.reducer,
+    filter: sliceFilter.reducer,
+  },
 });
-
-export default store;
