@@ -8,7 +8,7 @@ const Contacts = ({ listContact }) => {
   const dispatch = useDispatch();
   return listContact.map(contact => {
   return (
-    <ul className={s.list}>
+    <ul className={s.list} key={contact.id}>
       
         <li className={s.contact} key={contact.id}>
           {contact.name} - {contact.number}
